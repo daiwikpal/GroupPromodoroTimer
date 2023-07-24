@@ -1,7 +1,7 @@
-import Timer from "./timer.js"; 
-import Settings from "./settings.js"
+import Timer from "../components/timer.js"; 
+import Settings from "../components/settings.js"
 import { useState } from "react";
-import SettingsContext from "./settingscontext.js";
+import SettingsContext from "../components/contexts/settingscontext.js";
 
 function App(){
 
@@ -10,11 +10,9 @@ function App(){
     const [breakMinutes, setBreakMinutes] = useState(15); 
 
     return(
-        <div> 
-        <head>
-            <title> Tomator Together </title>
-        </head>
+        
         <main> 
+            
             <SettingsContext.Provider value={{
                 showSettings: showSettings, 
                 setShowSettings, setShowSettings, 
@@ -27,7 +25,7 @@ function App(){
                 
             </SettingsContext.Provider>
         </main> 
-        </div>
+    
     ); 
 }
 

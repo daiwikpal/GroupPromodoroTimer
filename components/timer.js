@@ -1,10 +1,10 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import PlayButton from "./playbutton";
-import PauseButton from "./pausebutton";
-import SettingsButton from "./settingsbutton";
+import PlayButton from "./buttons/playbutton";
+import PauseButton from "./buttons/pausebutton";
+import SettingsButton from "./buttons/settingsbutton";
 import { useContext, useState, useEffect, useRef } from "react";
-import SettingsContext from "./settingscontext";
+import SettingsContext from "./contexts/settingscontext";
 
 const RED = "#f54e4e";
 const GREEN = "#4aec8c";
@@ -54,7 +54,7 @@ function Timer() {
       }
 
       tick();
-    }, 1); // every 1000 ms this code runs
+    }, 1000); // every 1000 ms this code runs
 
     return () => clearInterval(interval);
   }, [settingsInfo]);
